@@ -1,11 +1,21 @@
-extern int getfont(char c);
+extern __code char *getfont(char c);
+extern void matrix_init(void);
+extern void matrix_d(void);
+
+void delay(int n)
+{
+	n = n*3333;
+	while(n--);
+}
+
 
 int main(void)
-{
-
-	while(1)
-		if(getfont('C')<0) break;
-	
+{ 
+	matrix_init();
+	for(;;){
+		matrix_d();
+		delay(2);
+	}
 
 	return 0;
 }

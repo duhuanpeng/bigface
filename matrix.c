@@ -35,9 +35,9 @@ void matrix_init(void)
 	for(i=0;i<1024;i++)
 		buf[i] = OFF;
 
-	buf[prt++] = 0xA0;
-	buf[prt++] = 0x7F;
-	buf[prt++] = 0x00;
+//x	buf[prt++] = 0xA0;
+//x	buf[prt++] = 0x7F;
+//x	buf[prt++] = 0x00;
 	prt = (int)buf;
 	sel = 0;
 
@@ -106,5 +106,62 @@ flush:
 	ret
 __endasm;
 	
+}
+
+void blkcpy(char i, char *prt)
+{
+	buf[i] = *prt++; i+= 27;
+	buf[i] = *prt++; i+= 27;
+	buf[i] = *prt++; i+= 27;
+	buf[i] = *prt++; i+= 27;
+	buf[i] = *prt++; i+= 27;
+	buf[i] = *prt++; i+= 27;
+	buf[i] = *prt++; i+= 27;
+	buf[i] = *prt++; i+= 27;
+}
+
+void blkcpyn(char i, char *prt, char n)
+{
+/*	buf[i] = *prt++; i+=27; n--; if(n == 0) return;*/
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i-=27*7-9; ; n--; if(n == 0) return;
+
+	
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i-=27*7-9; ; n--; if(n == 0) return;
+
+	
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i+=27; n--; if(n == 0) return;
+	buf[i] = *prt++; i-=27*7-9; ; n--; if(n == 0) return;
+}
+
+void blkset(char i, char c)
+{ 
+	buf[i] = c; i+= 27;
+	buf[i] = c; i+= 27;
+	buf[i] = c; i+= 27;
+	buf[i] = c; i+= 27;
+	buf[i] = c; i+= 27;
+	buf[i] = c; i+= 27;
+	buf[i] = c; i+= 27;
+	buf[i] = c; i+= 27;
 }
 

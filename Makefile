@@ -1,4 +1,3 @@
-
 AS := asx8051
 CC := sdcc
 
@@ -37,7 +36,7 @@ appmain.ihx: $(main) $(arel) $(crel)
 
 %.rel: %.c
 	@echo "CC " $^ "->" $@
-	@$(CC) -c $<	
+	@$(CC) -c $< -o $@
 
 clean:
 	rm -f *.lst  *.rel  *.rst  *.sym *.lnk *.ihx *.map *.mem

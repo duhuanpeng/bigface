@@ -25,3 +25,6 @@
 14. 红外遥控
 15. 红外串口
 
+### 相关联接
+1. 点阵字体提取软件 http://code.google.com/p/wordmake/
+2. www.taobao.com

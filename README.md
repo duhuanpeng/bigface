@@ -28,3 +28,4 @@
 ### 相关联接
 1. 点阵字体提取软件 http://code.google.com/p/wordmake/
 2. www.taobao.com
+3. 有不少传感器和模块： http://2010ic.taobao.com/
